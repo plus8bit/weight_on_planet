@@ -66,15 +66,41 @@ class HomeState extends State<Home> {
                     children: <Widget>[
                       //radio buttons
                       Radio<int>(
+                        activeColor: Colors.brown,
                         value: 0, groupValue: radioValue, onChanged: handleRadioValueChange),
+                      Text(
+                        'Pluto',
+                        style: TextStyle(color: Colors.white)
+                      ),
 
                       Radio<int>(
+                        activeColor: Colors.redAccent,
                         value: 1, groupValue: radioValue, onChanged: handleRadioValueChange),
+                        Text(
+                        'Mars',
+                        style: TextStyle(color: Colors.white)
+                      ),
 
                       Radio<int>(
+                        activeColor: Colors.orangeAccent,
                         value: 2, groupValue: radioValue, onChanged: handleRadioValueChange),
+                        Text(
+                        'Venus',
+                        style: TextStyle(color: Colors.white)
+                      ),
                     ],
-                  )
+                  ),
+
+                  Padding(padding: EdgeInsets.all(20.0)),
+                  //Result Text
+                  Text(
+                    'Hello There',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25.5,
+                      fontWeight: FontWeight.w500
+                    ),
+                    )
                 ],
               ),
             )
