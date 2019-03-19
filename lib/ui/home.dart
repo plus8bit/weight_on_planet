@@ -9,6 +9,17 @@ class Home extends StatefulWidget {
     }
     
 class HomeState extends State<Home> {
+
+  int radioValue = 0;
+
+  void handleRadioValueChange(int value) {
+     setState(() {
+       radioValue = value;
+
+       print(radioValue);
+     });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,10 +55,26 @@ class HomeState extends State<Home> {
                       labelText: 'Your Weight on Earth.',
                       hintText: 'In Pounds',
                       icon: Icon(Icons.person_outline)
-
                     ),
-                  )
+                  ),
 
+                  Padding(padding: EdgeInsets.all(5.0)),
+
+                  // Add three radio buttons
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      //radio buttons
+                      Radio<int>(
+                        value: 0, groupValue: radioValue, onChanged: handleRadioValueChange),
+
+                      Radio<int>(
+                        value: 1, groupValue: radioValue, onChanged: handleRadioValueChange),
+
+                      Radio<int>(
+                        value: 2, groupValue: radioValue, onChanged: handleRadioValueChange),
+                    ],
+                  )
                 ],
               ),
             )
